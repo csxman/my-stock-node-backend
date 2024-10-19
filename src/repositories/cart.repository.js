@@ -12,7 +12,7 @@ exports.findAllByQuery = async (user_id) =>
                             FROM Carts ct
                             LEFT JOIN Products pt
                             on ct.product_id = pt.id
-                            where ct.user_id = ${user_id}`,
+                            where ct.user_id = ${user_id} and ct.cart_status = 'C'`,
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
